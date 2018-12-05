@@ -3,12 +3,6 @@
 This repository can be used as a template to develop Plasma Mobile applications.
 It already includes templates for the qml ui, a c++ part, app metadata and flatpak packaging.
 
-## Building (requires Qt and Kirigami development libraries)
-```
-mkdir build && cmake -B build -S $PWD -GNinja -DCMAKE_INSTALL_PREFIX=/usr ..
-ninja -C build
-```
-
 ## Local building and testing using the SDK
 ```
 flatpak install flathub org.kde.Sdk//5.11 # Only needs to be done once
@@ -37,3 +31,13 @@ flatpak install app.flatpak
 ```
 
 Your new application should now appear on the homescreen.
+
+
+## Using the template to develop your application
+Edit the files to fit your naming and needs. In each command, replace "io.you.newapp" and "newapp" with the id and name you want to use
+
+```
+find . -name "CMakeLists.txt" -or -name "*.desktop" -or -name "*.xml" -or -name "*.json" -exec sed -i 's/org.kde.hellokirigami/io.you.newapp/g;s/hellokirigami/newapp/g' {} \;
+
+for file in $(find . -name "org.kde.hellokirigami*"); do mv $file $(echo $file | sed "s/org.kde.hellokirigami/io.you.newapp/g"); done
+```
