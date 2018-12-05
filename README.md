@@ -12,8 +12,8 @@ ninja -C build
 ## Local building and testing using the SDK
 ```
 flatpak install flathub org.kde.Sdk//5.11 # Only needs to be done once
-flatpak-builder flatpak-build --force-clean --ccache *.json
-flatpak-builder --run flatpak-build *.json hellokirigami
+flatpak-builder flatpak-build-desktop --force-clean --ccache *.json
+flatpak-builder --run flatpak-build-desktop *.json hellokirigami
 ```
 
 ## Creating a flatpak for the phone
@@ -22,7 +22,7 @@ Make sure your system also supports qemu user emulation. If not, you can find he
 
 ```
 flatpak install flathub org.kde.Sdk/arm/5.11 # Only needs to be done once
-flatpak-builder flatpak-build --repo=arm-phone --arch=arm --force-clean --ccache *.json
+flatpak-builder flatpak-build-phone --repo=arm-phone --arch=arm --force-clean --ccache *.json
 flatpak build-bundle arm-phone app.flatpak org.kde.hellokirigami
 ```
 
