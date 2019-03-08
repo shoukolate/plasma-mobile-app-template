@@ -43,4 +43,8 @@ add_subdirectory(src)
 install(PROGRAMS org.kde.hellokirigami.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.hellokirigami.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
+if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
+    ecm_install_po_files_as_qm(po)
+endif()
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
