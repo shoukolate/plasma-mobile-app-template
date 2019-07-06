@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=HelloKirigami
+Name=%{APPNAMELC}
 Comment=My first Plasma Mobile App
 Version=1.0
-Exec=hellokirigami
-MimeType=application/x-hellokirigami;
+Exec=%{APPNAMELC}
+MimeType=application/x-%{APPNAMELC};
 Icon=applications-development
 Type=Application
 Terminal=false

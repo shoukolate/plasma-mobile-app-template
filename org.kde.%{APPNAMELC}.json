@@ -1,9 +1,9 @@
 {
-    "id": "org.kde.hellokirigami",
+    "id": "org.kde.%{APPNAMELC}",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.12",
     "sdk": "org.kde.Sdk",
-    "command": "hellokirigami",
+    "command": "%{APPNAMELC}",
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
@@ -19,7 +19,7 @@
 
     "modules": [
         {
-            "name": "hellokirigami",
+            "name": "%{APPNAMELC}",
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]

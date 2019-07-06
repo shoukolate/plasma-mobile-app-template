@@ -1,0 +1,7 @@
+# KDE Config File
+[General]
+Name=Plasma Mobile (c++/QML)
+Comment=A C++ application with QML interface built using cmake
+Category=Qt/Graphical
+Icon=plasma-mobile.png
+ShowFilesAfterGeneration=%{dest}/src/main.cpp
